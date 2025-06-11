@@ -1,7 +1,3 @@
--- Databricks notebook source
-drop table if exists demo_db.fire_service_calls_tbl;
-drop view if exists demo_db;
-
 -- COMMAND ----------
 
 -- MAGIC %fs rm -r /user/hive/warehouse/demo_db.db
@@ -55,7 +51,8 @@ select * from demo_db.fire_service_calls_tbl
 
 -- COMMAND ----------
 
-truncate table demo_db.fire_service_calls_tbl
+truncate table demo_db.fire_service_calls_tbl 
+--spark doesnt offer delete & update statement, but databricks does
 
 -- COMMAND ----------
 
@@ -68,4 +65,6 @@ select * from demo_db.fire_service_calls_tbl
 
 -- COMMAND ----------
 
-
+-- Databricks notebook source
+drop table if exists demo_db.fire_service_calls_tbl;
+drop view if exists demo_db;
